@@ -1,0 +1,168 @@
+{% extends 'layout.html' %} {% load static%} {% block body %}
+<!-- hero section -->
+<section id="hero">
+  <div class="location-banner">
+    <p>
+      We're Now Open! Zipky- Kirinyaga Road, Off Munyu Road Find Us Here - Call
+      Us: 0748 770 777
+    </p>
+  </div>
+  <div class="bg-img-container">
+    <div class="hero-text">
+      <h1>Quality Products , <span>Just For You!</span></h1>
+    </div>
+  </div>
+</section>
+
+<!-- Latest products -->
+<section>
+  <div class="lts-heading">
+    <h1>Latest <span>Products</span></h1>
+  </div>
+  <div class="lts-container">
+    <div class="pd-cards">
+      {% for latestproducts in latestproducts %}
+      <div class="pd-card">
+        <img src="{{latestproducts.image.url }}" alt="" />
+         <h4>{{latestproducts.product_name }}</h4>
+         <p>{{ latestproducts.price}}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Featured products section -->
+<section id="category-products">
+  <div class="ctg-heading">
+    <h4>Featured <span>Products</span></h4>
+  </div>
+  <div class="container">
+    <div class="ctg-cards">
+      {% for featuredproducts in featuredproducts %}
+      <div class="ctg-card">
+        <img src="{{featuredproducts.image.url }}" alt="" />
+        <p>{{ featuredproducts.product_name }}</p>
+      </div>
+      {% endfor%}
+    </div>
+  </div>
+</section>
+<!-- Why us section -->
+<h2 class="why-us-heading">Why Choose <span>Zipky</span></h2>
+<div class="why-us-container">
+  <div class="why-us-card-container">
+    <div class="why-us-card">
+      <i class="fa-solid fa-heart"></i>
+      <h4>Satisfaction Guarantee</h4>
+      <p>
+        We're here to help you find the perfect phone and laptop accessories.
+      </p>
+    </div>
+    <div class="why-us-card">
+      <i class="fa-solid fa-shield-alt"></i>
+      <h4>Warranty</h4>
+      <p>We offer a 1 year warranty on all our products</p>
+      <p></p>
+    </div>
+    <div class="why-us-card">
+      <i class="fa-solid fa-bullhorn"></i>
+      <h4>Customer Service</h4>
+      <p>
+        We're here to help you find the perfect phone and laptop accessories.
+      </p>
+    </div>
+    <div class="why-us-card">
+      <i class="fa-solid fa-truck"></i>
+      <h4>Free Delivery</h4>
+      <p>
+        We deliver products to your doorstep.
+      </p>
+    </div>
+  </div>
+</div>
+<!-- newsletter -->
+<section id="nlt-section">
+  <div class="nlt-container">
+    <div class="nlt-text">
+      <h2>Subscribe to our <span>Channels</span></h2>
+      <p>Stay updated with the latest products and offers</p>
+    </div>
+    <form method="POST" action="{% url 'index' %}">
+        {% csrf_token %}
+        <!-- {{ form.as_p }} -->
+        <div class="nlt-form">
+          {{newsletterform.email}}
+        <a href="{% url  'subscribe' %}"><button type="submit">Subscribe</button></a>
+          </div>
+      </form>
+  </div>
+</section>
+<!-- Footer  Section -->
+ <section id="footer-section">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <img src="{% static  'assets/zipky-logo.jpg' %}" alt="" />
+    </div>
+    <div class="footer-address">
+      <h3>Find <span>Us</span></h3>
+      <p><b>Physical location: <br>
+      </b>
+        RNG Plaza, 3rd Floor, Ronald Ngala Street, Nairobi <br>
+        
+        Viking House, 1st Floor, Westlands, Nairobi <br>
+        
+        Beaver House, 1st Floor, Tom Mboya Street, Nairobi <br> 
+
+        <b> Opening Hours: </b><br>
+
+          Mon - Sat <br>
+          
+          9AM - 7PM <br>
+          
+        <b>Sunday</b><br>
+          
+          10AM - 6PM <br>
+          
+         <b>Phone Number:</b><br>
+          
+          (+254) 728274594<br>
+          
+          (+254) 733131155<br>
+          
+          (+254) 725646962</p>
+    </div>
+
+    <div class="footer-links">
+      <ul>
+        <h3>Quick Links</h3>
+        <li><a href="{% url 'products'%}">Products</a></li>
+        <li><a href="">How to Shop</a></li>
+        <li><a href="">Checkout Error</a></li>
+        <li><a href="">Terms and Conditions</a></li>
+        <li><a href="">Return and Refund Policy</a></li>
+        <li><a href="">Privacy Policy</a></li>
+
+      </ul>
+    </div>
+    <div class="footer-social-media ">
+      <p>Follow <span>Us:</span> </p>
+    <ul>
+    <li><a href=""><i class="fa-brands fa-tiktok"></i></a></li>
+    <li><a href=""><i class="fa-brands fa-x-twitter"></i></a></li> 
+    <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+    <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+    <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
+    </ul>
+
+
+        
+  </div>
+
+
+</section>
+<div class="copyright">
+  <p>2024 Zipky Accessories. All rights reserved.</p>
+</div>
+
+{% endblock %}
