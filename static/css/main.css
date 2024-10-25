@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 /* NAVBAR SECTION */
 .logo-link,
 .logo-image {
@@ -34,7 +33,6 @@ li {
 .nav-links li a {
   padding-bottom: 5px; /* Adds space for the line */
 }
-
 .nav-links li a:hover {
   color: #8357a8;
   cursor: pointer;
@@ -53,24 +51,13 @@ li {
   padding: 10px;
   text-align: center;
 }
-
-/* HERO SECTION */
-/* .bg-img-container {
-  background-image: url("/static/assets/");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 85vh;
-} */
-
-.hero-text h1 {
-  text-align: center;
-  font-size: 2.5rem;
-  color: #0b0b0b;
-  padding-top: 30px;
+.carousel-item img {
+  width: 500px;
+  height: 500px;
 }
-.hero-text span {
-  color: #8357a8;
+.carousel-title {
+  color: #f1f1f1;
+  font-size: 25px;
 }
 .lts-heading h1 {
   text-align: center;
@@ -211,6 +198,12 @@ li {
   height: 300px;
   border-radius: 20px;
 }
+.why-us-card h4 {
+  font-size: 20px;
+}
+.why-us-card p {
+  font-size: 18px;
+}
 .why-us-card:hover {
   color: #f1f1f1;
   background-color: #616058;
@@ -235,9 +228,8 @@ li {
   float: right;
   margin-right: 200px;
 }
-
 .nlt-text h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #0b0b0b;
 }
 .nlt-text p {
@@ -264,7 +256,7 @@ li {
 }
 .email-input {
   overflow: hidden;
-  padding-left: 30px;
+  padding-left: 20px;
   width: 200px;
   height: 50px;
   border: none;
@@ -275,7 +267,6 @@ li {
   transform: translateY(-10px);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
-
 /* FOOTER SECTION */
 .footer-container {
   padding-top: 30px;
@@ -305,7 +296,6 @@ li {
 }
 .footer-links h3 {
   font-size: 18px;
- 
 }
 .footer-links ul li a {
   list-style-type: none;
@@ -334,7 +324,6 @@ li {
 .footer-social-media span {
   color: #8357a8;
 }
-
 .footer-social-media ul li a i {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -351,14 +340,13 @@ li {
   border: 1px solid;
   box-shadow: 0px 0px 10px #2a2a2e;
 }
-
 .footer-social-media ul li a i:hover {
   transform: translateY(-10px);
   background-color: #000;
   color: #8357a8;
 }
 .copyright {
- 
+  height: 100%;
   align-items: center;
   background: #cac5c5;
 }
@@ -369,7 +357,7 @@ li {
   padding-top: 20px;
   transition: 0.5s ease-in-out;
 }
-.copyright p:hover{
+.copyright p:hover {
   color: #8357a8;
 }
 

@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.db import models
-from .models import Featured_Products,Latest_Products
+from .models import Featured_Products,Latest_Products,Slider
 from .forms import NewsletterForm
 
 
@@ -13,6 +13,7 @@ def index(request):
              'featuredproducts':Featured_Products.objects.all(),
              'latestproducts': Latest_Products.objects.all(),
              "newsletterform": newsletterform,
+             "slider": Slider.objects.all(),
     }
     if request.method == "POST":
         newsletterform = NewsletterForm(request.POST)

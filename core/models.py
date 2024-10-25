@@ -33,3 +33,15 @@ class Newsletter(models.Model):
         return self.email
     class Meta:
         verbose_name_plural = "Newsletter"
+
+class Slider(models.Model):
+    image= models.ImageField(upload_to="slider", blank=False)
+    title= models.CharField(max_length=100)
+    description= models.TextField(max_length=250, blank=True)   
+    
+    def __str__(self):
+        return self.title
+    class Meta:
+        verbose_name_plural = "Slider"
+
+    

@@ -8,16 +8,39 @@
     </p>
   </div>
   <div class="bg-img-container">
-    <div class="hero-text">
-      <h1>Quality Products , <span>Just For You!</span></h1>
     </div>
+</section>
+<section class="slider">
+  <div id="carouselExampleDark" class="carousel carousel-dark slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      {% for slider in slider %}
+      <div class="carousel-item {% if forloop.first %} active {% endif %}" data-bs-interval="10000">
+        <img src="{{ slider.image.url }}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <p class="carousel-title">{{ slider.title}}</p>
+        </div>
+      </div>
+      {% endfor %}
+       </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
 </section>
-
 <!-- Latest products -->
 <section>
   <div class="lts-heading">
-    <h1>Latest <span>Products</span></h1>
+    <h1>New<span> Arrivals</span></h1>
   </div>
   <div class="lts-container">
     <div class="pd-cards">
@@ -31,7 +54,6 @@
     </div>
   </div>
 </section>
-
 <!-- Featured products section -->
 <section id="category-products">
   <div class="ctg-heading">
@@ -119,7 +141,7 @@
           Mon - Sat <br>
           
           9AM - 7PM <br>
-          
+         
         <b>Sunday</b><br>
           
           10AM - 6PM <br>
@@ -132,7 +154,6 @@
           
           (+254) 725646962</p>
     </div>
-
     <div class="footer-links">
       <ul>
         <h3>Quick Links</h3>
@@ -142,7 +163,6 @@
         <li><a href="">Terms and Conditions</a></li>
         <li><a href="">Return and Refund Policy</a></li>
         <li><a href="">Privacy Policy</a></li>
-
       </ul>
     </div>
     <div class="footer-social-media ">
@@ -154,15 +174,9 @@
     <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
     <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
     </ul>
-
-
-        
-  </div>
-
-
+        </div>
 </section>
 <div class="copyright">
   <p>2024 Zipky Accessories. All rights reserved.</p>
 </div>
-
 {% endblock %}
