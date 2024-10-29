@@ -14,10 +14,12 @@
 }
 .main-navbar,
 .container {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
   gap: 500px;
+
 }
 .nav-links,
 li {
@@ -173,7 +175,7 @@ li {
   margin-top: 80px;
   text-align: center;
   color: #0b0b0b;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 510;
   padding-bottom: 30px;
 }
@@ -202,7 +204,7 @@ li {
   font-size: 20px;
 }
 .why-us-card p {
-  font-size: 18px;
+  font-size: 12px;
 }
 .why-us-card:hover {
   color: #f1f1f1;
@@ -360,8 +362,6 @@ li {
 .copyright p:hover {
   color: #8357a8;
 }
-
 /* MEDIAQUERIES */
-
 @media screen and (max-width: 900px) {
 }
