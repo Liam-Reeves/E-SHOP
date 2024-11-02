@@ -1,5 +1,7 @@
 {% extends 'layout.html' %} {% load static %} {% block body %}
 <link rel="stylesheet" href="{% static  'css/product-listing.css' %}" />
+
+
 <main id="product-section">
   <section class="hero-section">
     <div class="pd-container">
@@ -8,7 +10,9 @@
         <li class="ft-1">
           <p>Availability</p>
           <ul class="avb-filter">
-            <li><input type="checkbox" name="availability" value="all" /> All</li>
+            <li>
+              <input type="checkbox" name="availability" value="all" /> All
+            </li>
             <li>
               <input type="checkbox" name="availability" value="in stock" /> In
               Stock
@@ -32,15 +36,33 @@
         <li class="ft-3">
           <p>Brand</p>
           <ul class="brand-filter">
-            <li><input type="checkbox" name="brand" value="brand1" /> Brand 1</li>
-            <li><input type="checkbox" name="brand" value="brand2" /> Brand 2</li>
-            <li><input type="checkbox" name="brand" value="brand3" /> Brand 3</li>
-            <li><input type="checkbox" name="brand" value="brand4" /> Brand 4</li>
+            <li>
+              <input type="checkbox" name="brand" value="brand1" /> Brand 1
+            </li>
+            <li>
+              <input type="checkbox" name="brand" value="brand2" /> Brand 2
+            </li>
+            <li>
+              <input type="checkbox" name="brand" value="brand3" /> Brand 3
+            </li>
+            <li>
+              <input type="checkbox" name="brand" value="brand4" /> Brand 4
+            </li>
           </ul>
         </li>
       </ul>
     </div>
   </section>
+  <!-- Product cards -->
+  <div id="products-container">
+    {% for product_listing in product_listing %}
+    <div class="product-card">
+      <img src="{{ product_listing.image.url }}" alt="product_image" />
+      <p>{{ product_listing.name_of_product }}</p>
+      <p class="product-price">{{ product_listing.price }}</p>
+    </div>
+    {% endfor %}
+  </div>
 </main>
 
 {% endblock %}

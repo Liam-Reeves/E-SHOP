@@ -43,5 +43,19 @@ class Slider(models.Model):
         return self.title
     class Meta:
         verbose_name_plural = "Slider"
+        
+class Product_Listing(models.Model):
+    image= models.ImageField(upload_to="product_listing",blank=False)
+    
+    name_of_product = models.CharField(max_length=100)
+    
+    price= models.DecimalField(max_digits=10, decimal_places=2)
+    
+    
+    def __str__(self):
+     return self.name_of_product
+ 
+    class Meta:
+        verbose_name_plural = "Product Listings"
 
     

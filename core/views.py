@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.db import models
-from .models import Featured_Products,Latest_Products,Slider
+from .models import Featured_Products,Latest_Products,Slider,Product_Listing
 from .forms import NewsletterForm
 
 
@@ -34,7 +34,12 @@ def subscribe(request):
     
 
 def products(request):
-    return render(request, "product-listing.html")
+    context = {
+        "product_listing":Product_Listing.objects.all(),
+        
+    }
+    
+    return render(request, "product-listing.html", context)
 
 def about(request):
     return render(request, "about.html")
